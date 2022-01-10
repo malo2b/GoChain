@@ -33,3 +33,15 @@ func writeGenesis() {
 
 	_ = ioutil.WriteFile("database/genesis.json", file, 0644)
 }
+
+func writeBalances() {
+	balances := []Balances{
+		{
+			Name:   "andrej",
+			Amount: 1000700,
+		},
+	}
+	file, _ := json.MarshalIndent(balances, "", " ")
+
+	_ = ioutil.WriteFile("database/state.json", file, 0644)
+}
