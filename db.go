@@ -2,40 +2,34 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
-	"log"
-	"os"
+	"io/ioutil"
 	"time"
 )
 
 type Balances struct {
-	name   string
-	amount int64
+	Name   string
+	Amount int64
 }
 
 type Genesis struct {
-	genesisTime time.Time
-	chainId     string
-	balances    []Balances
+	GenesisTime time.Time
+	ChainId     string
+	Balances    []Balances
 }
 
 func writeGenesis() {
-	genesis := Genesis{
-		genesisTime: time.Now(),
-		chainId:     "the-blockchain-bar-ledger",
-		balances: []Balances{
+	gen := Genesis{
+		GenesisTime: time.Now(),
+		ChainId:     "the-blockchain-bar-ledger",
+		Balances: []Balances{
 			{
-				name:   "andrej",
-				amount: 1000000,
+				Name:   "andrej",
+				Amount: 1000000,
 			},
 		},
 	}
-	content, err := json.Marshal(genesis)
-	if err != nil {
-		fmt.Println(err)
-	}
-	err = os.WriteFile("database/genesis.json", content, 0644)
-	if err != nil {
-		log.Fatal(err)
-	}
+
+	file, _ := json.MarshalIndent(gen, "", " ")
+
+	_ = ioutil.WriteFile("database/genesis.json", file, 0644)
 }

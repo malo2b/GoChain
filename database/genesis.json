@@ -1,1 +1,10 @@
-{}
+{
+ "GenesisTime": "2022-01-10T21:56:11.3822313+01:00",
+ "ChainId": "the-blockchain-bar-ledger",
+ "Balances": [
+  {
+   "Name": "andrej",
+   "Amount": 1000000
+  }
+ ]
+}
