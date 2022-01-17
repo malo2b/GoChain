@@ -1,6 +1,6 @@
-[
- {
-  "Name": "andrej",
-  "Amount": 1000700
+{
+ "balances": {
+  "andrej": 998801,
+  "babayaga": 1999
  }
-]
+}
