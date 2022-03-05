@@ -1,11 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+// import HomeView from '../views/HomeView.vue'
+import TxIndexView from "@/views/transaction/TxIndexView";
+import TxCreateView from "@/views/transaction/TxCreateView";
 
 const routes = [
+  /*
   {
     path: '/',
     name: 'home',
     component: HomeView
+    },
+   */
+  {
+    path: '/',
+    name: 'transaction',
+    component: TxIndexView
+  },
+  {
+    path: '/transaction/create',
+    name: 'createTransaction',
+    component: TxCreateView
   },
   {
     path: '/about',
